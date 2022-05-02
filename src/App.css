@@ -4,7 +4,13 @@
   box-sizing: border-box;
   text-decoration: none;
   color: black;
+  font-family: 'Mukta', sans-serif;
+  background: rgb(250, 250, 250);
 
+
+}
+.App{
+ 
 }
 .Navbar{
   display: flex;
@@ -12,6 +18,10 @@
   margin: 20px auto ;
   align-items: center;
   max-width: 80vw;
+  box-sizing: border-box;
+  
+ 
+ 
 }
 
 .links{
@@ -19,6 +29,12 @@
   display: flex;
   justify-content: space-around;
   width: 30%;
+  align-items: center; 
+  transition: all 1s ease-in-out;
+}
+
+.Link{
+  color:rgb(117, 109, 109);
 }
 h1{
   font-size: 30px;
@@ -31,20 +47,25 @@ h2{
   text-align: center;
 }
 .blogs{
-  background-color: rgb(224, 206, 183);
+  /* background-color: rgb(224, 206, 183); */
   padding: 50px ;
-  margin: 20px 0;
+  margin: 10px 0;
 }
+
 .author{
   text-decoration: underline;
-  text-decoration-color: blue;
-  font-style: italic;
-  margin: 3px 0;
+  text-decoration-color: rgb(46, 46, 51);
+  margin-top: 10px;
+  font-weight: 600;
 }
 .services{
+ margin: 50px auto;
  text-align: center;
  display: block;
  transform: translate(0 ,50%);
+}
+.services h2{
+  margin: 20px;
 }
 .form-input{
   display: flex;
@@ -76,13 +97,89 @@ textarea{
 button{
   padding: 10px;
   margin: 10px 0;
-  background-color: rgb(180, 150, 139);
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
+  
+  
+  
 }
 .title{
   text-decoration: underline;
   color: blueviolet;
+ 
+
+}
+.deleteBtn{
+  width: 12x0px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  border: none;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: blueviolet;
+  letter-spacing: 1px;
+  
+
+}
+.blog-details{
+  max-width: 800px;
+  margin: 50px auto;   
+}
+nav{
+  font-size: 19px;
+  font-weight: 600;
+ 
+ 
+}
+.home h2{
+  color: blueviolet;
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 1px;
+}
+.before{
+  position: relative;
+  margin: 10px auto;
+  width: 600px;
+
+}
+.before::after{
+  content: "";
+  width: 150px;
+  height: 3px;
+  background-color:rgb(122, 9, 9);
+  position: absolute;  
+  transform: translate(150% ,50%);
+}
+nav .Link:hover{
+ background:blueviolet;
+ border-radius: 10px;
+ padding: 5px 10px;
+ transition: all 0.5s ease-out;
+ color: beige;
+
+}
+.header{
+  font-size: 35px;
+  color: rgb(154, 87, 216);
+  letter-spacing: 1px;
+}
+#active{
+ background-color: blueviolet;
+ padding:5px 10px;
+ color: rgb(236, 234, 234);
+ border-radius: 10px;
+}
+.blogs:hover{
+  box-shadow: 1px 2px 0px 0px rgba(145, 107, 145, 0.75);
+  border-left: 10px solid rgb(122, 9, 9);
+  transition: all 0.5s ease-out;
+  
+  
+}
+.blog-head{
+  font-size: 35px;
+  color: rgb(154, 87, 216);
+  letter-spacing: 1.5px;
+  
 }

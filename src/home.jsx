@@ -7,7 +7,7 @@ const Home = () => {
   
     return (
         <div className="home">
-          <h2><strong> Welcome To My Blog </strong></h2>
+          <div  className="before"><h2> Welcome To My Blog</h2></div>
           {<BlogList blogs={data} loading={isPending} />}
           {isPending && <p>Loading....</p>}
         </div>

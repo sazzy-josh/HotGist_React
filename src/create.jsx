@@ -1,15 +1,18 @@
 import { useState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const Create = () => {
  const [title, setTitle] = useState("");
  const [author, setauthor] = useState("");
  const [Body, setBody] = useState("");
  const [addingBlog, setaddingBlog] = useState(false);
+ const [description, setdescription] = useState("");
+ const navigate = useNavigate()
 
  const handleSubmit = (e) =>{
      e.preventDefault()
      setaddingBlog(true)
-    const blogDetails = {title,Body ,author}
+    const blogDetails = {title,Body ,author , description}
     fetch('http://localhost:8080/blogs',{
         method :"POST",
         headers : {
@@ -17,10 +20,12 @@ const Create = () => {
         },
         body: JSON.stringify(blogDetails)
     }).then(() => {
-        console.log("New Blog Added")
+        console.log(blogDetails)
         setaddingBlog(false)
         setBody("")
         setTitle("")
+        setdescription("");
+        navigate('/')
         
     })
  }
@@ -49,14 +54,22 @@ const Create = () => {
                <option value="Idahosa">Idahosa</option>
                <option value="Joshua">Joshua</option>
            </select>
-            <label><strong>Body:</strong></label>
-           <textarea name="Body" 
-              value={Body}
+           {/* <label><strong>Decription:</strong></label>
+           <input name="Description" 
+              value={description}
+              type="text"
               onChange={(e) => {
-                setBody(e.target.value)
+                setdescription(e.target.value)
+              }}>
+              </input> */}
+            <label><strong>Decription:</strong></label>
+           <textarea name="Body" 
+              value={description}
+              onChange={(e) => {
+                setdescription(e.target.value)
               }}>
               </textarea>
-          { addingBlog ? <button disabled>Adding Blog..</button> :<button type="submit">Add Blog</button>}
+          { addingBlog ? <button disabled  className='deleteBtn'>Adding Blog..</button> :<button type="submit" className='deleteBtn'>Add Blog</button>}
         </form>
         </div>
      );
